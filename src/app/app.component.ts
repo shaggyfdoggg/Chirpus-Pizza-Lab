@@ -40,9 +40,31 @@ export class AppComponent {
       price: 8.99
     },
   ]
+    
+
     getByCategory(cat: string):MenuItem[]{
-      
-    }
+      let menuItems: MenuItem[] = [];
+      this.allItems.forEach((c) => {
+
+        if(c.category == cat)
+      {
+        menuItems.push(c);
+      }
+    })
+    return menuItems;
+  };
+  
+  getUniqueCategory():string[]{
+    let result:string [] = [];
+    this.allItems.forEach((c) => {
+      if(result.includes(c.category) == false)
+      {
+        result.push(c.category)
+      }
+    });
+    return result;
+  };
+
 
 }
 
