@@ -1,0 +1,13 @@
+<h1>{{ title }}</h1>
+<table>
+  <tr>
+    <th>Item</th>
+    <th>Category</th>
+    <th>Price</th>
+  </tr>
+  <tr *ngFor="let i of allItems">
+    <td>{{ i.name }}</td>
+    <td>{{ i.category }}</td>
+    <td>{{ i.price | currency }}</td>
+  </tr>
+</table>
